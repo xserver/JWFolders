@@ -8,5 +8,5 @@ Pod::Spec.new do |s|
     s.platform     = :ios
     s.requires_arc = true
     s.source       = { :git => "https://github.com/xserver/JWFolders.git", :commit => "" }
-    s.source_files = "JWFolders/*"
+    s.source_files = "JWFolders/*","JWFolders/JWFolders.bundle"
 end
