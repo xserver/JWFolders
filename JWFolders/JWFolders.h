@@ -109,6 +109,10 @@ typedef NSInteger JWFoldersOpenDirection;
 @property (nonatomic, copy) JWFoldersCompletionBlock completionBlock;
 
 
+@property (nonatomic, assign) CGFloat notchTriangleWidth;    //  26
+@property (nonatomic, assign) CGFloat notchTriangleHeight;   //  12
+
+
 /* Opens the folder. Be sure the required properties are set! */
 - (void)open;
 

@@ -14,8 +14,8 @@
 #error This file must be compiled with ARC.
 #endif
 
-const CGFloat JWFoldersTriangleWidth = 26.f;
-const CGFloat JWFoldersTriangleHeight = 12.f;
+CGFloat JWFoldersTriangleWidth = 26.f;
+CGFloat JWFoldersTriangleHeight = 12.f;
 const CGFloat JWFoldersHighlightOpacity = 0.35f;
 const CGFloat JWFoldersOpeningDuration = 0.4f;
 
@@ -79,8 +79,21 @@ const CGFloat JWFoldersOpeningDuration = 0.4f;
     if (self) {
         // keep ourself around
         _strongSelf = self;
+        
+        _notchTriangleWidth  = 26.0f;
+        _notchTriangleHeight = 12.0f;
     }
     return self;
+}
+
+- (void)setNotchTriangleWidth:(CGFloat)notchTriangleWidth {
+    _notchTriangleWidth    = notchTriangleWidth;
+    JWFoldersTriangleWidth = notchTriangleWidth;
+}
+
+- (void)setNotchTriangleHeight:(CGFloat)notchTriangleHeight {
+    _notchTriangleHeight    = notchTriangleHeight;
+    JWFoldersTriangleHeight = notchTriangleHeight;
 }
 
 - (void)addShadowToView:(UIView *)view

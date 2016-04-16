@@ -1,0 +1,2 @@
+/Users/dragon/Library/Developer/Xcode/DerivedData/JWFoldersDemo-fmymtjhejuxhbidubkdqthonkiie/Build/Products/Debug-iphonesimulator/JWFoldersDemo.app
+iPhone Developer

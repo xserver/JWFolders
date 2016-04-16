@@ -23,6 +23,8 @@
     folder.shadowsEnabled = YES;
     folder.darkensBackground = NO;
     folder.showsNotch = YES;
+    folder.notchTriangleWidth = 6;
+    folder.notchTriangleHeight = 16;
     [folder open];
     
 }
