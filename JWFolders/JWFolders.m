@@ -247,8 +247,12 @@ const CGFloat JWFoldersOpeningDuration = 0.4f;
             UIImage *topShadow = nil;
             UIImage *bottomShadow = nil;
             if (self.showsNotch) {
-                topShadow = [UIImage imageNamed:up ? @"JWFolders.bundle/shadow_top" : @"JWFolders.bundle/shadow_top_notch"];
-                bottomShadow = [UIImage imageNamed:up ? @"JWFolders.bundle/shadow_low_notch" : @"JWFolders.bundle/shadow_low"];
+//                topShadow = [UIImage imageNamed:up ? @"JWFolders.bundle/shadow_top" : @"JWFolders.bundle/shadow_top_notch"];
+//                bottomShadow = [UIImage imageNamed:up ? @"JWFolders.bundle/shadow_low_notch" : @"JWFolders.bundle/shadow_low"];
+                
+                topShadow = [UIImage imageNamed:@"JWFolders.bundle/mask_shadow_top"];
+                bottomShadow = [UIImage imageNamed:@"JWFolders.bundle/mask_shadow_bottom"];
+                
             } else {
                 topShadow = [UIImage imageNamed:@"JWFolders.bundle/shadow_top"];
                 bottomShadow = [UIImage imageNamed:@"JWFolders.bundle/shadow_low"];
