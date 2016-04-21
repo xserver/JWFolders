@@ -298,6 +298,13 @@ const CGFloat JWFoldersOpeningDuration = 0.4f;
 }
 
 - (void)performClose:(id)sender {
+    
+    if ( ! _isOpening) {
+        return;
+    }
+    
+    _isOpening = NO;
+    
     BOOL up = (self.direction == JWFoldersOpenDirectionUp);
     CAMediaTimingFunction *timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     CABasicAnimation *move = [CABasicAnimation animationWithKeyPath:@"position"];
@@ -370,10 +377,7 @@ const CGFloat JWFoldersOpeningDuration = 0.4f;
 
 - (void)closeCurrentFolder {
     
-    if (_isOpening) {
-        [self performClose:self];
-        _isOpening = NO;
-    }
+    [self performClose:self];
 }
 
 @end
