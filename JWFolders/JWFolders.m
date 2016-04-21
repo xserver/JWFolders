@@ -53,6 +53,9 @@ const CGFloat JWFoldersOpeningDuration = 0.4f;
 @property (nonatomic, strong) JWFolderSplitView *bottom;
 @property (nonatomic, assign) CGPoint folderPoint;
 @property (nonatomic, strong) UIView *contentViewContainer;
+
+@property (nonatomic, assign) BOOL isOpening;
+
 @end
 
 
@@ -164,6 +167,11 @@ const CGFloat JWFoldersOpeningDuration = 0.4f;
                   completionBlock:(JWFoldersCompletionBlock)completionBlock
                         direction:(JWFoldersOpenDirection)direction {
     NSAssert(contentView && containerView, @"Content or container views must not be nil.");
+    
+    if (_isOpening) {
+        return;
+    }
+    _isOpening = YES;
     
     UIImage *screenshot = [containerView screenshot];
     
@@ -361,7 +369,11 @@ const CGFloat JWFoldersOpeningDuration = 0.4f;
 }
 
 - (void)closeCurrentFolder {
-    [self performClose:self];
+    
+    if (_isOpening) {
+        [self performClose:self];
+        _isOpening = NO;
+    }
 }
 
 @end
